@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+:root {
+    --accentColor: #001233;
+    --primaryColor: #FF595A;
+    --secondaryColor: #CAC0B3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    padding: 1.5rem 0.5rem;
+    width: 19rem; 
+    /* height: 30rem; */
+    background-color: var(--accentColor);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-content: center;
+}
+
+#onOffButton {
+    width: 56%;
+    height: 5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.roundSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondaryColor);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 3rem;
+}
+
+#onOffButton #toggleCheckBox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.roundSlider::before {
+    position: absolute;
+    content: "";
+    height: 4rem;
+    width: 4rem;
+    top: 0.5rem;
+    left: 0.6rem;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#toggleCheckBox:checked + .roundSlider {
+    background-color: var(--primaryColor);
+}
+
+#toggleCheckBox:checked + .roundSlider::before {
+    -webkit-transform: translateX(4.8rem);
+    -ms-transform: translateX(4.8rem);
+    transform: translateX(4.8rem);
+}
+
+hr {
+    border: none;
+    border-radius: 1rem;
+    width: 90%;
+    height: 0.2rem;
+    background-color: var(--secondaryColor);
+}
+
+#siteUrl {
+    background-color: var(--primaryColor);
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: 90%;
+}
+
+#siteUrl a {
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+#siteUrl a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#detailsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.3rem;
+}
+
+.detail {
+    color: white;
+    font-size: 0.7rem;
+}
+
+h5 {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primaryColor)
+}
+
+#reportContainer {
+    width: 90%;
+    display: grid;
+    justify-items: center;
+    row-gap: 0.2rem;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+textarea {
+    border-radius: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+#submitReport {
+    height: 2.5rem;
+    width: 8rem;
+    font-size: 0.95rem;
+    padding: 0.2rem;
+    color: var(--primaryColor);
+    background-color: transparent;
+    border: 2px solid var(--primaryColor);
+    border-radius: 0.5rem;
+    font-weight: bolder;
+}
+
+#submitReport:hover {
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: var(--accentColor);
+    transition: .3s;
+}
+
+#urlForReport {
+    height: 1.8rem;
+}
